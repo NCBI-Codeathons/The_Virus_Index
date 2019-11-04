@@ -1,0 +1,67 @@
+[
+    { 
+        "mode": "REQUIRED",
+        "name": "virus-taxid",
+        "type": "INTEGER"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "virus-name",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "genbank-accession",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "kegg-genome",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "kegg-disease",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "disease",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "host-taxid",
+        "type": "INTEGER"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "host-name",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "host-lineage",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "pmid",
+        "type": "INTEGER"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "evidence",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "sample-type",
+        "type": "STRING"
+    },
+    { 
+        "mode": "OPTIONAL",
+        "name": "source-organism",
+        "type": "STRING"
+    }
+]
