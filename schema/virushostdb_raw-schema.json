@@ -1,0 +1,72 @@
+[    
+    { 
+        "mode": "REQUIRED",
+        "name": "virus_taxid",
+        "type": "INTEGER"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "virus_name",
+        "type": "STRING"
+    },
+    {
+        "name": "virus_lineage",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "refseq_id",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "kegg_genome",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "kegg_disease",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "disease",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "host_taxid",
+        "type": "INTEGER"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "host_name",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "host_lineage",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "pmid",
+        "type": "INTEGER"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "evidence",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "sample_type",
+        "type": "STRING"
+    },
+    { 
+        "mode": "REQUIRED",
+        "name": "source_organism",
+        "type": "STRING"
+    }
+]
