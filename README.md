@@ -24,3 +24,4 @@ A Federated Index of Virus Metadata and Hyperdata in Public Repositories
   
   
   # Flow chart
+See [Virus Indexing and Sequence Quality Team Scope.pdf]
