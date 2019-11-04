@@ -1,0 +1,2 @@
+#!/bin/bash
+bq --location=US load --source_format=CSV --replace=true --field_delimiter="\t" --allow_jagged_rows --allow_quoted_newlines viasq.virushostdb_raw gs://virus-hunting-2-codeathon-viasq-team/virushostdb_raw.tsv ./virushostdb_raw-schema.json
