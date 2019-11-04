@@ -24,3 +24,5 @@ A Federated Index of Virus Metadata and Hyperdata in Public Repositories
   
   
   # Flow chart
+See ![Virus Indexing and Sequence Quality Team Scope.pdf](
+https://github.com/NCBI-Codeathons/The_Virus_Index/raw/master/Virus%20Indexing%20and%20Sequence%20Quality%20Team%20Scope.pdf)
