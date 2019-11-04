@@ -2,7 +2,7 @@
     { 
         "mode": "REQUIRED",
         "name": "virus_taxid",
-        "type": "INTEGER"
+        "type": "STRING"
     },
     { 
         "mode": "REQUIRED",
@@ -37,7 +37,7 @@
     { 
         "mode": "REQUIRED",
         "name": "host_taxid",
-        "type": "INTEGER"
+        "type": "STRING"
     },
     { 
         "mode": "REQUIRED",
@@ -52,7 +52,7 @@
     { 
         "mode": "REQUIRED",
         "name": "pmid",
-        "type": "INTEGER"
+        "type": "STRING"
     },
     { 
         "mode": "REQUIRED",
