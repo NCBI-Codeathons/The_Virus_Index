@@ -58,3 +58,19 @@ There is no fixed taxonomica level for viral graphs (ie within genus, within fam
   
   
 
+## Utilities
+### Dependencies
+* taxadb
+
+### Initialize taxadb and environment
+(Assumes bash and linux)
+
+1. Download and set up taxadb: Run `make init_taxadb`
+2. Initialize python virtual environment: Run `source .env/bin/activate`
+3. Set environment variable: `export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg`
+
+### Available tools
+* `python/name2taxid.py`: takes scientific names on standard input or input files (spelling is significant) and
+  outputs NCBI taxonomy IDs.
+* `python/taxid2lineage.py`: takes NCBI taxonomy IDs on standard input (or
+  input files) and outputs the lineage for that given taxid. 
