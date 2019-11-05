@@ -45,5 +45,7 @@ A particular virus (entry in the db) can belong to multiple viral graphs
    What's the added value? Is it a subset of the full set?
    E.g.: Host-phage interaction & Domain-HMM groups
 
+* __AWESOME__ progress: Alex loaded Ryan's data (Accession, species) to BigQuery
+  
   
 
