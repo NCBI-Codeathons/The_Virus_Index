@@ -1,67 +1,67 @@
 [
     { 
         "mode": "REQUIRED",
-        "name": "virus-taxid",
+        "name": "virus_taxid",
         "type": "INTEGER"
     },
     { 
         "mode": "REQUIRED",
-        "name": "virus-name",
+        "name": "virus_name",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
-        "name": "genbank-accession",
+        "mode": "NULLABLE",
+        "name": "genbank_accession",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
-        "name": "kegg-genome",
+        "mode": "NULLABLE",
+        "name": "kegg_genome",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
-        "name": "kegg-disease",
+        "mode": "NULLABLE",
+        "name": "kegg_disease",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
+        "mode": "NULLABLE",
         "name": "disease",
         "type": "STRING"
     },
     { 
         "mode": "REQUIRED",
-        "name": "host-taxid",
+        "name": "host_taxid",
         "type": "INTEGER"
     },
     { 
         "mode": "REQUIRED",
-        "name": "host-name",
+        "name": "host_name",
         "type": "STRING"
     },
     { 
         "mode": "REQUIRED",
-        "name": "host-lineage",
+        "name": "host_lineage",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
+        "mode": "NULLABLE",
         "name": "pmid",
         "type": "INTEGER"
     },
     { 
-        "mode": "OPTIONAL",
+        "mode": "NULLABLE",
         "name": "evidence",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
-        "name": "sample-type",
+        "mode": "NULLABLE",
+        "name": "sample_type",
         "type": "STRING"
     },
     { 
-        "mode": "OPTIONAL",
-        "name": "source-organism",
+        "mode": "NULLABLE",
+        "name": "source_organism",
         "type": "STRING"
     }
 ]

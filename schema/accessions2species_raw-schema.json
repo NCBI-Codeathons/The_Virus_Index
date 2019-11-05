@@ -1,0 +1,12 @@
+[
+    {
+        "mode": "REQUIRED",
+        "name": "accession",
+        "type": "STRING"
+    },
+    {
+        "mode": "REQUIRED",
+        "name": "species",
+        "type": "STRING"
+    }
+]
