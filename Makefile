@@ -18,6 +18,8 @@ check: check_python ${VENV}
 	[ -f taxadb.sqlite ] || make init_taxadb
 	source ${VENV}/bin/activate && echo 9606 | ./python/taxid2lineage.py
 	source ${VENV}/bin/activate && echo None | ./python/taxid2lineage.py
+	source ${VENV}/bin/activate && echo 10090 | ./python/taxid2name.py
+	source ${VENV}/bin/activate && echo junk | ./python/taxid2name.py
 	source ${VENV}/bin/activate && echo "Homo sapiens" | ./python/name2taxid.py
 	source ${VENV}/bin/activate && echo "Mus musculus" | ./python/name2taxid.py
 
