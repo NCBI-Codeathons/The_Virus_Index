@@ -32,7 +32,8 @@ https://github.com/NCBI-Codeathons/The_Virus_Index/raw/master/Virus%20Indexing%2
 
 Notes from other teams: 
 A particular virus (entry in the db) can belong to multiple viral graphs.
-There is no fixed taxonomica level for viral graphs (ie within genus, within family)
+
+There is no fixed taxonomica level for viral graphs (ie within genus, within family).
 
 
 # Presentation 05/11/19
@@ -41,14 +42,16 @@ There is no fixed taxonomica level for viral graphs (ie within genus, within fam
   * Please put in the bucket, see sample commands [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/4#issuecomment-549868892)
 * Pseudo-code for _eventual_ API:
     * *very early* draft [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/5)
-* Question: scope of data
+* Question: Scope of data
  * Some groups are working with SRA contigs from previous hackathons
     * 3000 dataset?
+    * Is it worth the pain of deconvoluting what we did for this one?
  * Others are working on data from Genbank (i.e.: metadata already provided by
    NCBI Virus webpage). Is there new metadata (that's not offered by NCBI)?
    What's the added value? Is it a subset of the full set?
    E.g.: Host-phage interaction & Domain-HMM groups
  * Integration of SRA data and Genbank data?
+ * Is anybody working with ENA data?
 
 
 * __AWESOME__ progress: Alex loaded Ryan's data (Accession, species) to BigQuery
