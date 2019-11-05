@@ -1,0 +1,72 @@
+[
+    {
+        "name": "ignore_me",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "contig_id",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "cdd",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "pident",
+        "type": "NUMERIC",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "length",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "mismatch",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "gapopen",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "qstart",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "qend",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sstart",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "send",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "evalue",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "bitscore",
+        "type": "NUMERIC",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "srr",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]
