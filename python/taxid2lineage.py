@@ -8,4 +8,4 @@ for line in fileinput.input():
         lineage = taxid.lineage_name(t)
         print(lineage)
     except:
-        pass
+        print("[NA]")
