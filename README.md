@@ -30,3 +30,11 @@ https://github.com/NCBI-Codeathons/The_Virus_Index/raw/master/Virus%20Indexing%2
 
 Notes from other teams: 
 A particular virus (entry in the db) can belong to multiple viral graphs
+
+
+# Presentation 05/11/19
+
+* We're looking for data!
+  * Put in the bucket, see sample commands [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/4)
+* Sample API
+
