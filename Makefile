@@ -16,9 +16,9 @@ taxid2lineage: init_taxadb
 # Test code
 check: check_python ${VENV}
 	[ -f taxadb.sqlite ] || make init_taxadb
-	source ${VENV}/bin/activate && echo 9606 | ./taxid2lineage.py
-	source ${VENV}/bin/activate && echo "Homo sapiens" | ./name2taxid.py
-	source ${VENV}/bin/activate && echo "Mus musculus" | ./name2taxid.py
+	source ${VENV}/bin/activate && echo 9606 | ./python/taxid2lineage.py
+	source ${VENV}/bin/activate && echo "Homo sapiens" | ./python/name2taxid.py
+	source ${VENV}/bin/activate && echo "Mus musculus" | ./python/name2taxid.py
 
 .PHONY: init_taxadb
 init_taxadb: ${VENV}
