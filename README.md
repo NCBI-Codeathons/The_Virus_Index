@@ -18,6 +18,7 @@ A Federated Index of Virus Metadata and Hyperdata in Public Repositories
   * Possible examples: 
     * [NCBI virus webpage](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/) [old page](https://www.ncbi.nlm.nih.gov/genome/viruses/)
     * [EBI Virus page](https://www.ebi.ac.uk/genomes/virus.html)
+    
   * Get data into [pandas](https://pandas.pydata.org/)?
   * How would researchers like to access this data (from which purview)? Genomic context?
     * Complete genomes, specific genes (philogenetic markers). 
@@ -39,7 +40,7 @@ There is no fixed taxonomica level for viral graphs (ie within genus, within fam
 * We're looking for data!
   * Please put in the bucket, see sample commands [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/4#issuecomment-549868892)
 * Pseudo-code for _eventual_ API:
- * *very early* draft [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/5)
+    * *very early* draft [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/5)
 * Question: scope of data
  * Some groups are working with SRA contigs from previous hackathons
     * 3000 dataset?
