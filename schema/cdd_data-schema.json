@@ -1,7 +1,7 @@
 [
     {
         "name": "ignore_me",
-        "type": "INTEGER",
+        "type": "STRING",
         "mode": "REQUIRED"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
         "name": "pident",
-        "type": "NUMERIC",
+        "type": "FLOAT",
         "mode": "NULLABLE"
     },
     {
@@ -56,12 +56,12 @@
     },
     {
         "name": "evalue",
-        "type": "INTEGER",
+        "type": "FLOAT",
         "mode": "NULLABLE"
     },
     {
         "name": "bitscore",
-        "type": "NUMERIC",
+        "type": "FLOAT",
         "mode": "NULLABLE"
     },
     {
