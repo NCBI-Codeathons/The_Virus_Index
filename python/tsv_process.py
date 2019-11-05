@@ -1,16 +1,17 @@
 import csv
 import sys
 
-tsvname = sys.argv[1]
+csvname = sys.argv[1]
+delim   = sys.argv[2]
 
 def printrow(row):
     quoted = []
     for item in row:
         quoted.append('"' + item + '"')
-    print '\t'.join(quoted)
+    print delim.join(quoted)
 
-with open(tsvname) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter='\t')
+with open(csvname) as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=delim)
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
