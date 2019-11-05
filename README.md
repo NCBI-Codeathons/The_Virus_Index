@@ -35,6 +35,15 @@ A particular virus (entry in the db) can belong to multiple viral graphs
 # Presentation 05/11/19
 
 * We're looking for data!
-  * Put in the bucket, see sample commands [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/4)
-* Sample API
+  * Please put in the bucket, see sample commands [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/4#issuecomment-549868892)
+* Pseudo-code for _eventual_ API:
+ * *very early* draft [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/5)
+* Question: scope of data
+ * Some groups are working with SRA contigs from previous hackathon
+ * Others are working on data from Genbank (i.e.: metadata already provided by
+   NCBI Virus webpage). Is there new metadata (that's not offered by NCBI)?
+   What's the added value? Is it a subset of the full set?
+   E.g.: Host-phage interaction & Domain-HMM groups
+
+  
 
