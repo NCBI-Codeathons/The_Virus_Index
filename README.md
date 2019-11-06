@@ -66,7 +66,8 @@ There is no fixed taxonomica level for viral graphs (ie within genus, within fam
 ### Initialize taxadb and environment
 (Assumes bash and linux)
 
-1. Download and set up taxadb: Run `make init_taxadb`
+1. Download and set up taxadb: Run `make init_taxadb` (this will take about
+   2-3 minutes)
 2. Initialize python virtual environment: Run `source .env/bin/activate`
 3. Set environment variable: `export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg`
 
