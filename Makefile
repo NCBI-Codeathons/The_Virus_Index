@@ -18,6 +18,9 @@ check_taxadb: check_python_syntax ${VENV}
 	source ${VENV}/bin/activate && echo junk | ./python/taxid2name.py
 	source ${VENV}/bin/activate && echo "Homo sapiens" | ./python/name2taxid.py
 	source ${VENV}/bin/activate && echo "Mus musculus" | ./python/name2taxid.py
+
+check_api: ${VENV} check_python_syntax
+	source ${VENV}/bin/activate && python/sample-viral-index-access.py
 	tests/check-module.sh
 
 .PHONY: init_taxadb
