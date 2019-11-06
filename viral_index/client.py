@@ -57,7 +57,6 @@ class ViralIndex:
         input: virus taxonomy ID (integer)
         output: list of possible host_name (list of strings)
         """
-<<<<<<< HEAD
         query = "select host_name, host_tax_id from viasq.known_interactions_db where virus_tax_id = " + str(virus_taxid)
         query_job = self.bq.query(query, location="US")
 
@@ -65,16 +64,6 @@ class ViralIndex:
         for row in query_job:
             # Row values can be accessed by field name or index
             retval.append([row[0], row[1]])
-        return retval
-=======
-        query = "select host_name, host_tax_id, evidence, virus_name from `virus-hunting-2-codeathon.viasq.combined_known_interactions` where virus_tax_id = " + str(virus_taxid)
->>>>>>> 1e4865247103d454c777cd80b16e2b75621f5ccc
-
-        query_job = self.bq.query(query, location="US")
-
-        retval = []
-        for row in query_job:
-            retval.append(row)
         return retval
 
     def get_potential_hosts_for_virus_domain(self, cdd_id):
