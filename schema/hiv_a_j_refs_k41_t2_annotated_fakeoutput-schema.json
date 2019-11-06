@@ -1,0 +1,37 @@
+[
+    {
+        "name": "ignore_me",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "kmer_1",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "kmer_2",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "distance",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sample",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "genbank_accession",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "taxonomy_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "name": "target_name",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "target_accession",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "query_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "query_accession",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "hmm_from",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "hmm_to",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "ali_from",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "ali_to",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "env_from",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "env_to",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sq_len",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "strand",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "evalue",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "score",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "bias",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "description_of_target",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]

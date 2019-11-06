@@ -1,0 +1,47 @@
+[
+    {
+        "name": "ignore_me",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "taxonomy_gtdb",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "accession",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "array_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "spacer_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "spacer_seq",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "accession3",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "source",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "ncbi_tax_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]
