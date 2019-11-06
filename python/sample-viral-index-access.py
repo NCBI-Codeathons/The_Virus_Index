@@ -39,12 +39,14 @@ def main():
 
 
     # Combining data
+    cdd_id = 164925
     print("For CDD ID " + str(cdd_id) + " these are the potential hosts that viruses containing that domain can infect")
     virus_taxids = viral_client.get_potential_hosts_for_virus_domain(cdd_id)
     if virus_taxids is not None:
         for vtaxid in virus_taxids:
             hosts = viral_client.get_host_from_virus_taxonomy(vtaxid)
-            print(hosts)
+            if len(hosts) != 0:
+                print(hosts)
 
     return 0
 
