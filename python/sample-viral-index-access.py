@@ -23,12 +23,12 @@ def main():
         for r in runs:
             print(r)
 
-    print("For CDD ID {}, here are the potential hosts that can be infected by viruses that contain that domain".format(cdd_id))
-    hosts = viral_client.get_hosts_for_virus_domain(cdd_id)
-    if hosts is not None:
-        for h in hosts:
-            print(h)
-
+##    print("For CDD ID {}, here are the potential hosts that can be infected by viruses that contain that domain".format(cdd_id))
+##    hosts = viral_client.get_hosts_for_virus_domain(cdd_id)
+##    if hosts is not None:
+##        for h in hosts:
+##            print(h)
+##
 
     pig_taxid = 9823
     print("List of viruses that can infect my favorite taxid (Sus scrofa pig): " + str(pig_taxid))
@@ -40,7 +40,7 @@ def main():
 
     # Combining data
     print("For CDD ID " + str(cdd_id) + " these are the potential hosts that viruses containing that domain can infect")
-    virus_taxids = viral_client.get_potential_hosts_for_virus_domains(cdd_id)
+    virus_taxids = viral_client.get_potential_hosts_for_virus_domain(cdd_id)
     if virus_taxids is not None:
         for vtaxid in virus_taxids:
             hosts = viral_client.get_host_from_virus_taxonomy(vtaxid)
