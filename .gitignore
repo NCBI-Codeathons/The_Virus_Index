@@ -106,3 +106,5 @@ data
 results
 
 taxadb*
+
+etc/cred.json

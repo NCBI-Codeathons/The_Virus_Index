@@ -7,6 +7,7 @@ SHELL=/bin/bash
 VENV=.env
 
 export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg
+#export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/etc/cred.json
 
 # Test code
 check_taxadb: check_python_syntax ${VENV}
@@ -17,6 +18,7 @@ check_taxadb: check_python_syntax ${VENV}
 	source ${VENV}/bin/activate && echo junk | ./python/taxid2name.py
 	source ${VENV}/bin/activate && echo "Homo sapiens" | ./python/name2taxid.py
 	source ${VENV}/bin/activate && echo "Mus musculus" | ./python/name2taxid.py
+	tests/check-module.sh
 
 .PHONY: init_taxadb
 init_taxadb: ${VENV}
@@ -32,10 +34,29 @@ check_python_syntax: ${VENV}
 ${VENV}: requirements.txt
 	[ -d ${VENV} ] || virtualenv -p python3 $@
 	source ${VENV}/bin/activate && pip install -r $^
+	source ${VENV}/bin/activate && pip install -r requirements/test.txt
+	source ${VENV}/bin/activate && pip install -e .
+
+##############################################################################
+# pypi support
+MODULE_NAME?=viral_index
+PYTHON_MODULE_VERSION=$(shell grep version setup.py | cut -d= -f 2 | tr -d \'  | tr -d , )
+dist/${MODULE_NAME}-${PYTHON_MODULE_VERSION}.tar.gz:
+	python setup.py sdist
+
+# twine --repository assumes ~/.pypirc settings include username/password; --repository-url prompts them
+TEST_PYPI=https://test.pypi.org
+.PHONY: deploy
+deploy: dist/${MODULE_NAME}-${PYTHON_MODULE_VERSION}.tar.gz
+	#twine upload --repository-url ${TEST_PYPI}/legacy/ $<
+	twine upload --repository testpypi $<
+	#twine upload $<
+
 
 clean:
-	$(RM) -r *.log *.pyc 
+	$(RM) -r *.log *.egg-info
 	find . -name __pycache__ | xargs ${RM} -fr
+	find . -name '*.pyc' | xargs ${RM} -fr
 
 distclean: clean
 	${RM} -r ${VENV} taxadb*

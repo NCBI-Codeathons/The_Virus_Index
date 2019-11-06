@@ -58,6 +58,17 @@ There is no fixed taxonomica level for viral graphs (ie within genus, within fam
 * __AWESOME__ progress: Alex loaded Ryan's data (Accession, species) to BigQuery
   
   
+## API
+Status: Skeleton
+
+https://test.pypi.org/project/viral-index/
+
+### Instructions to use
+
+1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
+1. Run `make check` # This sets up the development environment and ensures it works.
+1. Enable python virtualenv: `source .env/bin/activate`
+1. Write code that uses `viral_index.client`
 
 ## Utilities
 ### Dependencies

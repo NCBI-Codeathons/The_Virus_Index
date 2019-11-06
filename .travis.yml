@@ -6,4 +6,4 @@ install:
   - pip install -r requirements/test.txt
   - pip install -e .
 script: 
-  - make check_taxadb
+  - make check_python_syntax
