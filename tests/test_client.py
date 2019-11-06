@@ -26,17 +26,22 @@
 #
 
 import unittest
-import uuid
-from viral_index import client
+from viral_index.client import ViralIndex
 
 
 class TestViralIndex(unittest.TestCase):
 
     def setUp(self):
-        self.rid_string = "unit-test-{}".format(uuid.uuid4())
+        self.vcli = ViralIndex()
 
-    def test_function1(self):
-        self.assertEqual(1, 1)
+    def test_function_get_host_from_virus_taxonomy(self):
+        virus_names = self.vcli.get_host_from_virus_taxonomy(9606)
+        self.assertIsNone(virus_names)
+
+    def test_function_get_SRAs_where_CDD_is_found(self):
+        sra_runs = self.vcli.get_SRAs_where_CDD_is_found(9606)
+        self.assertIsNotNone(sra_runs)
+        self.assertTrue(len(sra_runs) > 0)
 
     def tearDown(self):
         pass

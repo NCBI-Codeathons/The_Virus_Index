@@ -8,6 +8,7 @@ VPATH=data
 VENV=.env
 
 export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg
+export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/etc/cred.json
 
 .PHONY: taxid2lineage
 taxid2lineage: init_taxadb

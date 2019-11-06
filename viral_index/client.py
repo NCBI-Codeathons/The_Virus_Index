@@ -25,52 +25,60 @@
 # Author: Christiam Camacho (camacho@ncbi.nlm.nih.gov)
 #
 
+from google.auth import compute_engine
 from google.cloud import bigquery
 
 
 class ViralIndex:
 
-    def __init__(self, rid):
-        self.client = bigquery.Client()
-        if rid is None:
-            raise ValueError('valid RID must be specified')
-        self.rid = rid
-        self.gcs = None
+    def __init__(self):
+        credentials = compute_engine.Credentials()
+        self.bq = bigquery.Client(credentials=credentials)
 
 
-    def get_viruses_for_host_taxonomy(taxid):
+    def get_viruses_for_host_taxonomy(self, taxid):
         """ 
         input: taxonomy ID for the host (integer)
         output: virus_name (list of strings)
         """
+        return []
 
-    def get_host_from_virus_taxonomy(virus_taxid):
+    def get_host_from_virus_taxonomy(self, virus_taxid):
         """
         description: Gets the hosts that can be infected for a given virus taxonomy ID
         input: virus taxonomy ID (integer)
         output: list of possible host_name (list of strings)
         """
 
-    def get_virus_host_interactions_from_confidence_level(confidence_level):
+    def get_virus_host_interactions_from_confidence_level(self, confidence_level):
         """
         description: Gets the virus-host interactions for given confidence level
         input: confidence_level
         output: virus_taxid, host_taxid
         """
 
-    def get_SRAs_where_CDD_is_found(cdd_id):
+    def get_SRAs_where_CDD_is_found(self, cdd_id):
         """
         input: CDD ID (String) - only viral ones for now.
         output: SRA ID (list of strings)
         """
+        query = ("select cdd from viasq.cdd_data LIMIT 10")
+        query_job = self.bq.query(query, location="US")
 
-    def get_domains(virus_taxid):
+        retval = []
+        for row in query_job:  # API request - fetches results
+            # Row values can be accessed by field name or index
+            assert row[0] == row.name == row["cdd"]
+            retval.append(row[0])
+        return retval
+
+    def get_domains(self, virus_taxid):
         """
         input: virus_taxid
         output: HMM domains, score, possibly, from David's group: CDDs, locations?
         """
 
-    def virus_graph(virus_taxid):
+    def virus_graph(self, virus_taxid):
         """
         input: virus_taxonomy_id
         output: if exists, a VCF file that represents the graph
