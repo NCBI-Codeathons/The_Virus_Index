@@ -83,3 +83,13 @@ class ViralIndex:
         input: virus_taxonomy_id
         output: if exists, a VCF file that represents the graph
         """
+    def get_spacer_seqs(self, spacer_seq):
+        """
+        input: taxonomy_id
+        output: spacer_seq
+        """
+    def get_taxid_from_spacer_seq(self, taxid):
+        """
+        input: spacer_seq
+        output: taxonomy_id
+        """
