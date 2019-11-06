@@ -1,0 +1,37 @@
+[
+    {
+        "name": "sample_contig",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "ref_seq_accession",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "taxid",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "distance",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "pvalue",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "shared_hashes",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_hashes",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]
