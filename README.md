@@ -1,6 +1,7 @@
 # The_Virus_Index
 A Federated Index of Virus Metadata and Hyperdata in Public Repositories
 
+[![Build Status](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index.svg?branch=master)](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index)
 
 # What we'd like to do?
 * Collaborate with other teams to define a data model
