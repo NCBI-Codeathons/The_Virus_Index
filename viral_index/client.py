@@ -86,6 +86,13 @@ class ViralIndex:
         input: confidence_level
         output: virus_taxid, host_taxid
         """
+        query = "select virus_tax_id, host_tax_id from viasq.known_interactions_db where evidence = " + str(confidence_level)
+        query_job = self.bq.query(query,location="US")
+
+        retval = []
+        for row in query_job:
+            retval.append([row[0],row[1]])
+        return retval
 
     def get_SRAs_where_CDD_is_found(self, cdd_id_integer):
         """
