@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # ===========================================================================
 #
 #                            PUBLIC DOMAIN NOTICE
@@ -57,18 +58,17 @@ class ViralIndex:
         output: virus_taxid, host_taxid
         """
 
-    def get_SRAs_where_CDD_is_found(self, cdd_id):
+    def get_SRAs_where_CDD_is_found(self, cdd_id_integer):
         """
         input: CDD ID (String) - only viral ones for now.
         output: SRA ID (list of strings)
         """
-        query = ("select cdd from viasq.cdd_data LIMIT 10")
+        query = "select srr from viasq.cdd_data_original where cast(substr(cdd,5) as int64) =  " + str(cdd_id_integer)
         query_job = self.bq.query(query, location="US")
 
         retval = []
         for row in query_job:  # API request - fetches results
             # Row values can be accessed by field name or index
-            assert row[0] == row.cdd == row["cdd"]
             retval.append(row[0])
         return retval
 
