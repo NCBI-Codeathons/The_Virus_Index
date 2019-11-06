@@ -68,7 +68,7 @@ class ViralIndex:
         retval = []
         for row in query_job:  # API request - fetches results
             # Row values can be accessed by field name or index
-            assert row[0] == row.name == row["cdd"]
+            assert row[0] == row.cdd == row["cdd"]
             retval.append(row[0])
         return retval
 

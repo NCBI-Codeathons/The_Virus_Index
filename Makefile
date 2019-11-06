@@ -34,8 +34,8 @@ init_taxadb: ${VENV}
 
 check_python: ${VENV}
 	source ${VENV}/bin/activate && \
-	for f in $(wildcard *.py); do python -m py_compile $$f ; done 
-	python3 -m unittest discover -s tests
+		for f in $(wildcard *.py); do python -m py_compile $$f ; done  && \
+		python3 -m unittest discover -s tests
 	#python3 -m unittest $(subst .py,,$(filter-out setup.py, $(wildcard *.py)))
 	#time -p python3 -m doctest map.py
 	#time -p py.test *.py
