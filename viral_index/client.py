@@ -51,6 +51,9 @@ class ViralIndex:
         output: list of possible host_name (list of strings)
         """
 
+    def get_hosts_for_virus_domain(self, cdd_id):
+        return None
+
     def get_virus_host_interactions_from_confidence_level(self, confidence_level):
         """
         description: Gets the virus-host interactions for given confidence level

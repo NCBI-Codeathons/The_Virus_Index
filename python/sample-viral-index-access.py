@@ -17,13 +17,13 @@ def main():
 
     viral_client = ViralIndex()
     cdd_id = 165276
-    print(f"For CDD ID {cdd_id}, here are the SRA runs where it's found")
+    print('For CDD ID ' + str(cdd_id) + ' here are the SRA runs where it is found')
     runs = viral_client.get_SRAs_where_CDD_is_found(cdd_id)
     if runs is not None:
         for r in runs:
             print(r)
 
-    print(f"For CDD ID {cdd_id}, here are the potential hosts that can be infected by viruses that contain that domain")
+    print("For CDD ID {}, here are the potential hosts that can be infected by viruses that contain that domain".format(cdd_id))
     hosts = viral_client.get_hosts_for_virus_domain(cdd_id)
     if hosts is not None:
         for h in hosts:
