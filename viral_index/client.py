@@ -38,7 +38,7 @@ class ViralIndex:
 
 
     def get_viruses_for_host_taxonomy(self, taxid):
-        """ 
+        """
         input: taxonomy ID for the host (integer)
         output: virus_name (list of strings)
         """
@@ -57,6 +57,14 @@ class ViralIndex:
         input: virus taxonomy ID (integer)
         output: list of possible host_name (list of strings)
         """
+        query = "select host_name, host_tax_id from viasq.known_interactions_db where virus_tax_id = " + str(virus_taxid)
+        query_job = self.bq.query(query, location="US")
+
+        retval = []
+        for row in query_job:
+            # Row values can be accessed by field name or index
+            retval.append([row[0], row[1]])
+        return retval
 
     def get_hosts_for_virus_domain(self, cdd_id):
         return None
