@@ -1,7 +1,6 @@
 # The_Virus_Index
 A Federated Index of Virus Metadata and Hyperdata in Public Repositories
 
-[![Build Status](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index.svg?branch=master)](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index)
 
 # What we'd like to do?
 * Collaborate with other teams to define a data model
@@ -59,18 +58,34 @@ There is no fixed taxonomica level for viral graphs (ie within genus, within fam
   
   
 ## API
-Status: Skeleton
+Status: Extensible DRAFT
+
+[![Build Status](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index.svg?branch=master)](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index)
 
 https://test.pypi.org/project/viral-index/
 
 ### Instructions to use
 
 1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
-1. Run `make check` # This sets up the development environment and ensures it works.
+1. Set up the python virtual environment: `make .env`
 1. Enable python virtualenv: `source .env/bin/activate`
-1. Write code that uses `viral_index.client`
+1. Set up the GCP credentials: `export GOOGLE_APPLICATION_CREDENTIALS=${PATH_TO_CREDENTIALS_JSON_FILE}` - Ask Alex, Christiam or Carl about this.
+1. Write code that uses `viral_index.client.ViralIndex`
 
-## Utilities
+### Sample code
+
+```python
+>>> from viral_index.client import ViralIndex
+>>> viral_client = ViralIndex()
+>>> runs = viral_client.get_SRAs_where_CDD_is_found(165276)
+<generator object <genexpr> at 0x7fc0d9de0eb8>
+>>> print([r for r in runs])
+['SRR2187433', 'SRR533343', 'ERR1915143']
+>>> 
+```
+
+## Taxonomy utilities
+
 ### Dependencies
 * taxadb python module
 

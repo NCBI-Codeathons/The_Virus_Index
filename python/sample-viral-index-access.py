@@ -16,7 +16,7 @@ def main():
         return 1
 
     viral_client = ViralIndex()
-    runs = viral_client.get_SRAs_where_CDD_is_found("dummy")
+    runs = viral_client.get_SRAs_where_CDD_is_found(165276)
     for r in runs:
         print(r)
     return 0

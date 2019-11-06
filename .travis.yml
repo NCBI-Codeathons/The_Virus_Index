@@ -7,3 +7,4 @@ install:
   - pip install -e .
 script: 
   - make check_python_syntax
+  - make check_taxadb
