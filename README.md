@@ -66,8 +66,9 @@ https://test.pypi.org/project/viral-index/
 ### Instructions to use
 
 1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
-1. Run `make check` # This sets up the development environment and ensures it works.
+1. Set up the python virtual environment: `make .env`
 1. Enable python virtualenv: `source .env/bin/activate`
+1. Set up the GCP credentials: `export GOOGLE_APPLICATION_CREDENTIALS=${PATH_TO_CREDENTIALS_JSON_FILE}`
 1. Write code that uses `viral_index.client`
 
 ## Utilities
