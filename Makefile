@@ -8,7 +8,7 @@ VPATH=data
 VENV=.env
 
 export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg
-#export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/etc/cred.json
+export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/etc/cred.json
 
 .PHONY: taxid2lineage
 taxid2lineage: init_taxadb
@@ -36,10 +36,7 @@ check_python: ${VENV}
 	source ${VENV}/bin/activate && \
 		for f in $(wildcard *.py); do python -m py_compile $$f ; done  && \
 		python3 -m unittest discover -s tests
-	#python3 -m unittest $(subst .py,,$(filter-out setup.py, $(wildcard *.py)))
-	#time -p python3 -m doctest map.py
-	#time -p py.test *.py
-	#time -p py.test tests
+	source ${VENV}/bin/activate && python/sample-viral-index-access.py
 
 ${VENV}: requirements.txt
 	[ -d ${VENV} ] || virtualenv -p python3 $@
