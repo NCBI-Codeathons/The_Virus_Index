@@ -82,6 +82,17 @@ https://test.pypi.org/project/viral-index/
 >>> print([r for r in runs])
 ['SRR2187433', 'SRR533343', 'ERR1915143']
 >>> 
+
+>>> pig_taxid = 9823
+>>> viruses = viral_client.get_viruses_for_host_taxonomy(pig_taxid)
+>>> if viruses is not None:
+        for virus in viruses:
+            print(virus)
+['Rotavirus C', 36427]
+['Porcine rubulavirus', 53179]
+['Porcine associated porprismacovirus 7', 2170123]
+['Porcine enterovirus b/BEL/15V010', 2017720]
+[...]
 ```
 
 ## Taxonomy utilities
