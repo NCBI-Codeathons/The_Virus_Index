@@ -31,10 +31,10 @@ def main():
 
 
     pig_taxid = 9823
-    print("List of viruses that can infect my favorite taxid (Sus scrofa pig): {pig_taxid}")
+    print("List of viruses that can infect my favorite taxid (Sus scrofa pig): " + str(pig_taxid))
     viruses = viral_client.get_viruses_for_host_taxonomy(pig_taxid)
     if viruses is not None:
-        for virus in viral_client.get_viruses_for_host_taxonomy(pig_taxid):
+        for virus in viruses:
             print(virus)
 
     return 0
