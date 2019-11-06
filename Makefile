@@ -20,8 +20,8 @@ check_taxadb: check_python_syntax ${VENV}
 	source ${VENV}/bin/activate && echo "Mus musculus" | ./python/name2taxid.py
 
 check_api: ${VENV} check_python_syntax
-	source ${VENV}/bin/activate && python/sample-viral-index-access.py
 	tests/check-module.sh
+	source ${VENV}/bin/activate && python/sample-viral-index-access.py
 
 .PHONY: init_taxadb
 init_taxadb: ${VENV}
