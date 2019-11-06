@@ -57,9 +57,21 @@ class ViralIndex:
         input: virus taxonomy ID (integer)
         output: list of possible host_name (list of strings)
         """
-
-    def get_hosts_for_virus_domain(self, cdd_id):
         return None
+
+    def get_potential_hosts_for_virus_domain(self, cdd_id):
+        """
+        description: Gets the potential hosts for viruses that contain this CDD model
+        input: CDD ID (integer)
+        output: list of possible host taxids (list of integers)
+        """
+        query = "select taxid from viasq.cdd_data_original C , viasq.taxonomy_3k T where c.sample_contig = T.sample_contig AND cast(substr(cdd, 5) as int64) = " + str(cdd_id)
+        query_job = self.bq.query(query, location="US")
+
+        retval = []
+        for row in query_job:
+            retval.append(row[0])
+        return retval
 
     def get_virus_host_interactions_from_confidence_level(self, confidence_level):
         """
