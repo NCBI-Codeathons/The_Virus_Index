@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import csv
 import sys
 
@@ -8,7 +9,7 @@ def printrow(row):
     quoted = []
     for item in row:
         quoted.append('"' + item + '"')
-    print delim.join(quoted)
+    print(delim.join(quoted))
 
 with open(csvname) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=delim)
