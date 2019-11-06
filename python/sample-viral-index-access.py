@@ -38,6 +38,13 @@ def main():
             print(virus)
 
 
+    HCMV_taxid = 10359
+    print("List of hosts that can be infected by my favourite virus (Human cytomegalovirus): " + str(HCMV_taxid))
+    hosts_virus = viral_client.get_host_from_virus_taxonomy(HCMV_taxid)
+    if hosts_virus is not None:
+        for host in hosts_virus:
+            print(host)
+
     # Combining data
     cdd_id = 164925
     print("For CDD ID " + str(cdd_id) + " these are the potential hosts that viruses containing that domain can infect")
