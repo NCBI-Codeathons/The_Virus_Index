@@ -42,7 +42,7 @@ https://test.pypi.org/project/viral-index/
 ## Taxonomy utilities
 
 ### Dependencies
-* taxadb python module
+* taxadb python module: https://github.com/HadrienG/taxadb
 
 ### Initialize taxadb and environment
 (Assumes bash and linux)
