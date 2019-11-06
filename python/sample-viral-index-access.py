@@ -16,9 +16,27 @@ def main():
         return 1
 
     viral_client = ViralIndex()
-    runs = viral_client.get_SRAs_where_CDD_is_found(165276)
-    for r in runs:
-        print(r)
+    cdd_id = 165276
+    print(f"For CDD ID {cdd_id}, here are the SRA runs where it's found")
+    runs = viral_client.get_SRAs_where_CDD_is_found(cdd_id)
+    if runs is not None:
+        for r in runs:
+            print(r)
+
+    print(f"For CDD ID {cdd_id}, here are the potential hosts that can be infected by viruses that contain that domain")
+    hosts = viral_client.get_hosts_for_virus_domain(cdd_id)
+    if hosts is not None:
+        for h in hosts:
+            print(h)
+
+
+    pig_taxid = 9823
+    print("List of viruses that can infect my favorite taxid (Sus scrofa pig): {pig_taxid}")
+    viruses = viral_client.get_viruses_for_host_taxonomy(pig_taxid)
+    if viruses is not None:
+        for virus in viral_client.get_viruses_for_host_taxonomy(pig_taxid):
+            print(virus)
+
     return 0
 
 
