@@ -37,7 +37,7 @@ A particular virus (entry in the db) can belong to multiple viral graphs.
 There is no fixed taxonomica level for viral graphs (ie within genus, within family).
 
 
-# Presentation 05/11/19
+# Presentation 11/05/19
 
 * We're looking for data!
   * Please put in the bucket, see sample commands [here](https://github.com/NCBI-Codeathons/The_Virus_Index/issues/4#issuecomment-549868892)
@@ -72,7 +72,7 @@ https://test.pypi.org/project/viral-index/
 
 ## Utilities
 ### Dependencies
-* taxadb
+* taxadb python module
 
 ### Initialize taxadb and environment
 (Assumes bash and linux)
