@@ -53,8 +53,19 @@ def main():
             hosts = viral_client.get_host_from_virus_taxonomy(vtaxid)
             print(hosts)
 
-    return 0
 
+    evidence = "\'NCBI\'"
+    print("List all virus:host interactions based on level of evidence: " + str(evidence))
+    evidence_interaction = viral_client.get_virus_host_interactions_from_confidence_level(evidence)
+    if evidence_interaction is not None:
+        for evi_int in evidence_interaction:
+            #print(evi_int)
+            print("List it's too long!")
+
+
+
+
+    return 0
 
 if __name__ == "__main__":
     import sys, traceback
@@ -64,4 +75,3 @@ if __name__ == "__main__":
         print(e, file=sys.stderr)
         traceback.print_exc(file=sys.stderr)
         sys.exit(1)
-
