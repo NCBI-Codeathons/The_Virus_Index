@@ -12,10 +12,10 @@ TMP=`mktemp -d`
 trap " /bin/rm -fr $TMP " INT QUIT EXIT HUP KILL ALRM
 pushd $TMP
 
-virtualenv -p python3 .env
+virtualenv -q -p python3 .env
 set +x
 source .env/bin/activate
 set -x
-pip install google-cloud-bigquery
-pip install -i https://test.pypi.org/simple/ viral-index
+pip install -q google-cloud-bigquery
+pip install -q -i https://test.pypi.org/simple/ viral-index
 popd
