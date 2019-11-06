@@ -1,0 +1,42 @@
+[
+    {
+        "name": "virus_tax_id",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "virus_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "virus_query_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "virus_lineage",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "host_tax_id",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "host_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "host_lineage",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "evidence",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]
