@@ -4,7 +4,7 @@ A Federated Index of Virus Metadata and Hyperdata in Public Repositories
 ## API
 Status: Extensible DRAFT
 
-[![Build Status](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index.svg?branch=master)](https://travis-ci.org/NCBI-Codeathons/The_Virus_Index)
+[![Build Status](https://travis-ci.com/NCBI-Codeathons/The_Virus_Index.svg?branch=master)](https://travis-ci.com/NCBI-Codeathons/The_Virus_Index)
 
 https://test.pypi.org/project/viral-index/
 
