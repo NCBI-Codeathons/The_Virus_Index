@@ -10,6 +10,11 @@ https://test.pypi.org/project/viral-index/
 
 ### Instructions to use
 
+*N.B.*: Usage of this API requires access to BigQuery. To set up authentication, please follow [these instructions](https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication)
+
+*N.B.*: You _may_ be charged for using this API. Please learn more about [GCP's free tier](https://cloud.google.com/free/)
+
+
 1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
 1. Set up the python virtual environment: `make .env`
 1. Enable python virtualenv: `source .env/bin/activate`
