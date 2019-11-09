@@ -26,15 +26,13 @@
 # Author: Christiam Camacho (camacho@ncbi.nlm.nih.gov)
 #
 
-from google.auth import compute_engine
 from google.cloud import bigquery
 
 
 class ViralIndex:
 
     def __init__(self):
-        credentials = compute_engine.Credentials()
-        self.bq = bigquery.Client(credentials=credentials)
+        self.bq = bigquery.Client()
 
 
     def get_viruses_for_host_taxonomy(self, taxid):
@@ -42,7 +40,7 @@ class ViralIndex:
         input: taxonomy ID for the host (integer)
         output: virus_name (list of strings)
         """
-        query = "select virus_name, virus_tax_id from viasq.known_interactions_db where host_tax_id = " + str(taxid)
+        query = "select virus_name, virus_tax_id from `virus-hunting-2-codeathon`.viasq.known_interactions_db where host_tax_id = " + str(taxid)
         query_job = self.bq.query(query, location="US")
 
         retval = []
@@ -57,7 +55,7 @@ class ViralIndex:
         input: virus taxonomy ID (integer)
         output: list of possible host_name (list of strings)
         """
-        query = "select host_name, host_tax_id from viasq.known_interactions_db where virus_tax_id = " + str(virus_taxid)
+        query = "select host_name, host_tax_id from `virus-hunting-2-codeathon`.viasq.known_interactions_db where virus_tax_id = " + str(virus_taxid)
         query_job = self.bq.query(query, location="US")
 
         retval = []
@@ -72,7 +70,7 @@ class ViralIndex:
         input: CDD ID (integer)
         output: list of possible host taxids (list of integers)
         """
-        query = "select taxid from viasq.cdd_data_original C , viasq.taxonomy_3k T where c.sample_contig = T.sample_contig AND cast(substr(cdd, 5) as int64) = " + str(cdd_id)
+        query = "select taxid from `virus-hunting-2-codeathon`.viasq.cdd_data_original C , `virus-hunting-2-codeathon`.viasq.taxonomy_3k T where c.sample_contig = T.sample_contig AND cast(substr(cdd, 5) as int64) = " + str(cdd_id)
         query_job = self.bq.query(query, location="US")
 
         retval = []
@@ -86,7 +84,7 @@ class ViralIndex:
         input: confidence_level
         output: virus_taxid, host_taxid
         """
-        query = "select virus_tax_id, host_tax_id from viasq.known_interactions_db where evidence = " + str(confidence_level)
+        query = "select virus_tax_id, host_tax_id from `virus-hunting-2-codeathon`.viasq.known_interactions_db where evidence = " + str(confidence_level)
         query_job = self.bq.query(query,location="US")
 
         retval = []
@@ -99,7 +97,7 @@ class ViralIndex:
         input: CDD ID (String) - only viral ones for now.
         output: SRA ID (list of strings)
         """
-        query = "select srr from viasq.cdd_data_original where cast(substr(cdd,5) as int64) =  " + str(cdd_id_integer)
+        query = "select srr from `virus-hunting-2-codeathon`.viasq.cdd_data_original where cast(substr(cdd,5) as int64) =  " + str(cdd_id_integer)
         query_job = self.bq.query(query, location="US")
 
         retval = []
