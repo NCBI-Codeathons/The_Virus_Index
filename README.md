@@ -2,31 +2,36 @@
 A Federated Index of Virus Metadata and Hyperdata in Public Repositories
 
 ## API
-Status: Extensible DRAFT
+Status: Extensible DRAFT API
 
 [![Build Status](https://travis-ci.com/NCBI-Codeathons/The_Virus_Index.svg?branch=master)](https://travis-ci.com/NCBI-Codeathons/The_Virus_Index)
 
 https://test.pypi.org/project/viral-index/
 
-### Instructions to use
+### Developer instructions 
 
-*N.B.*: Usage of this API requires access to BigQuery. To set up authentication, please follow [these instructions](https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication)
+1. Install the `viral-index` module
+```bash
+virtualenv -ppython3 .env
+source .env/bin/activate
+pip install -q -i https://test.pypi.org/simple/ viral-index 
+```
 
-*N.B.*: You _may_ be charged for using this API. Please learn more about [GCP's free tier](https://cloud.google.com/free/)
+2. Configure BigQuery access credentials
 
+Usage of this API requires access to GCP BigQuery. To set up authentication, please follow [these instructions](https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication).
 
-1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
-1. Set up the python virtual environment: `make .env`
-1. Enable python virtualenv: `source .env/bin/activate`
-1. Set up the GCP credentials: `export GOOGLE_APPLICATION_CREDENTIALS=${PATH_TO_CREDENTIALS_JSON_FILE}` - Ask Alex, Christiam or Carl about this.
-1. Write code that uses `viral_index.client.ViralIndex`
+*N.B.*: You _may_ be charged for using this API. Please learn more about [GCP's free tier](https://cloud.google.com/free/).
+
+3. Write your code to access the index!
 
 ### Sample code
 
 ```python
 >>> from viral_index.client import ViralIndex
 >>> viral_client = ViralIndex()
->>> runs = viral_client.get_SRAs_where_CDD_is_found(165276)
+>>> cdd_id = 165276
+>>> runs = viral_client.get_SRAs_where_CDD_is_found(cdd_id)
 <generator object <genexpr> at 0x7fc0d9de0eb8>
 >>> print([r for r in runs])
 ['SRR2187433', 'SRR533343', 'ERR1915143']
@@ -44,16 +49,39 @@ https://test.pypi.org/project/viral-index/
 [...]
 ```
 
-## Taxonomy utilities
+### Maintainer instructions 
+
+1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
+1. Set up the python virtual environment: `make .env`
+1. Enable python virtualenv: `source .env/bin/activate`
+1. Set up the GCP credentials: `export GOOGLE_APPLICATION_CREDENTIALS=${PATH_TO_CREDENTIALS_JSON_FILE}`.
+1. Write code that uses `viral_index.client.ViralIndex`
+
+Automated testing is available in [TravisCI](https://travis-ci.com/NCBI-Codeathons/The_Virus_Index).
+
+The `Makefile` has several targets that may be helpful:
+
+* `.env`: initializes the python virtual environment.
+* `check_bq`: checks command line access to BigQuery (tool availability and authentication).
+* `check_python_syntax`: checks the syntax of python scripts in this repo.
+* `check_taxadb`: checks that taxadb was properly installed.
+* `check_api`: checks that the API can be retrieved from PyPI, runs demo script.
+* `init_taxadb`: Initializes and configures taxadb (needed for the taxonomy utilities).
+* `deploy`: Builds a tarball for distribution and uploads it to test.pypi.org (requires `twine`, contact @christiam).
+* `setup_bigquery_authentication`: Sample command lines to set up authentication for BigQuery.
+
+The module's version is stored in [setup.py](./setup.py).
+
+## Bonus: Taxonomy utilities
 
 ### Dependencies
-* taxadb python module: https://github.com/HadrienG/taxadb
+* [taxadb python module](https://github.com/HadrienG/taxadb)
 
 ### Initialize taxadb and environment
 (Assumes bash and linux)
 
 1. Download and set up taxadb: Run `make init_taxadb` (this will take about
-   2-3 minutes)
+   2-3 minutes).
 2. Initialize python virtual environment: Run `source .env/bin/activate`
 3. Set environment variable: `export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg`
 
@@ -62,3 +90,6 @@ https://test.pypi.org/project/viral-index/
   outputs NCBI taxonomy IDs.
 * `python/taxid2lineage.py`: takes NCBI taxonomy IDs on standard input (or
   input files) and outputs the lineage for that given taxid. 
+  
+## Future work
+* Review data in BigQuery and integrate it better with the API
