@@ -16,6 +16,8 @@ virtualenv -q -p python3 .env
 set +x
 source .env/bin/activate
 set -x
-pip install -q google-cloud-bigquery
-pip install -q -i https://test.pypi.org/simple/ viral-index
+#pip install  google-cloud-bigquery
+#pip download -d ./tmp --no-binary :all: -i https://test.pypi.org/simple/ viral-index
+pip install --extra-index-url https://test.pypi.org/simple/ viral-index
+$OLDPWD/python/sample-viral-index-access.py
 popd

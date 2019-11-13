@@ -14,7 +14,7 @@ https://test.pypi.org/project/viral-index/
 ```bash
 virtualenv -ppython3 .env
 source .env/bin/activate
-pip install -q -i https://test.pypi.org/simple/ viral-index 
+pip install -q --extra-index-url https://test.pypi.org/simple/ viral-index 
 ```
 
 2. Configure BigQuery access credentials
@@ -48,6 +48,18 @@ Usage of this API requires access to GCP BigQuery. To set up authentication, ple
 ['Porcine enterovirus b/BEL/15V010', 2017720]
 [...]
 ```
+
+### Troubleshooting
+
+1. If you get an error like the one below, it's likely that you don't have
+   Bigquery configured properly for your project. See step 2 in developer
+   instructions above.
+
+   ```bash
+   Access Denied: Project {YOUR_PROJECT_HERE}:
+   User does not have bigquery.jobs.create permission in project
+   {YOUR_PROJECT_HERE}
+   ```
 
 ### Maintainer instructions 
 

@@ -68,13 +68,13 @@ dist/${MODULE_NAME}-${PYTHON_MODULE_VERSION}.tar.gz:
 TEST_PYPI=https://test.pypi.org
 .PHONY: deploy
 deploy: dist/${MODULE_NAME}-${PYTHON_MODULE_VERSION}.tar.gz
-	#twine upload --repository-url ${TEST_PYPI}/legacy/ $<
-	twine upload --repository testpypi $<
-	#twine upload $<
+	#source ${VENV}/bin/activate && twine upload --repository-url ${TEST_PYPI}/legacy/ $<
+	source ${VENV}/bin/activate && twine upload --repository testpypi $<
+	#source ${VENV}/bin/activate && twine upload $<
 
 
 clean:
-	$(RM) -r *.log *.egg-info
+	$(RM) -r *.log *.egg-info dist
 	find . -name __pycache__ | xargs ${RM} -fr
 	find . -name '*.pyc' | xargs ${RM} -fr
 

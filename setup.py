@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(name='viral_index',
       description='Viral index for metagenomic contgs from codeathon',
-      version='0.0.2',
+      version='0.0.3',
       author='Christiam Camacho',
       author_email='camacho@ncbi.nlm.nih.gov',
       url='https://github.com/NCBI-Codeathons/The_Virus_Index',
