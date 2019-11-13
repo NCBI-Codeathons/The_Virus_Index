@@ -32,7 +32,6 @@ Usage of this API requires access to GCP BigQuery. To set up authentication, ple
 >>> viral_client = ViralIndex()
 >>> cdd_id = 165276
 >>> runs = viral_client.get_SRAs_where_CDD_is_found(cdd_id)
-<generator object <genexpr> at 0x7fc0d9de0eb8>
 >>> print([r for r in runs])
 ['SRR2187433', 'SRR533343', 'ERR1915143']
 >>> 
@@ -48,6 +47,8 @@ Usage of this API requires access to GCP BigQuery. To set up authentication, ple
 ['Porcine enterovirus b/BEL/15V010', 2017720]
 [...]
 ```
+
+Additional sample code can be found in [python/sample-viral-index-access.py](python/sample-viral-index-access.py).
 
 ### Troubleshooting
 
