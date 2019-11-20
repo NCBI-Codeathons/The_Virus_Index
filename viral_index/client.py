@@ -113,19 +113,38 @@ class ViralIndex:
         input: virus_taxid
         output: HMM domains, score, possibly, from David's group: CDDs, locations?
         """
-
+    
     def virus_graph(self, virus_taxid):
         """
         input: virus_taxonomy_id
         output: if exists, a VCF file that represents the graph
         """
-    def get_spacer_seqs(self, spacer_seq):
+    def get_spacer_seqs(self, taxid):
         """
         input: taxonomy_id
         output: spacer_seq
         """
-    def get_taxid_from_spacer_seq(self, taxid):
+        query = "select spacer_id, spacer_seq, accession3, source FROM viasq.spacer_db WHERE ncbi_tax_id = " + str(taxid)
+        query_job = self.bq.query(query, location="US")
+
+        retval = []
+        for row in query_job:
+            retval.append()row[0]
+        return retval
+
+    def get_taxid_from_spacer_seq(self, spacer_seq):
         """
         input: spacer_seq
         output: taxonomy_id
         """
+        query = " select spacer_id, spacer_seq, accession3, source, ncbi_tax_id FROM viasq.spacer_db WHERE spacer_seq like " + str(spacer_seq)
+        query_job = self.bq.query(query, location="US")
+
+        retval = []
+        for row in query_job:
+            retval.append(row[0])
+        return retval
+
+
+
+
