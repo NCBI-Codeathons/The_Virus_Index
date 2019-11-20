@@ -129,7 +129,7 @@ class ViralIndex:
 
         retval = []
         for row in query_job:
-            retval.append(row[0])
+            retval.append([row[0], row[1], row[2], row[3]])
         return retval
 
     def get_taxid_from_spacer_seq(self, spacer_seq):
@@ -137,12 +137,12 @@ class ViralIndex:
         input: spacer_seq
         output: taxonomy_id
         """
-        query = " select spacer_id, spacer_seq, accession3, source, ncbi_tax_id FROM viasq.spacer_db WHERE spacer_seq like " + str(spacer_seq)
+        query = " select spacer_id, spacer_seq, accession3, source, ncbi_tax_id FROM viasq.spacer_db WHERE spacer_seq like '" + str(spacer_seq) +"'"
         query_job = self.bq.query(query, location="US")
 
         retval = []
         for row in query_job:
-            retval.append(row[0])
+            retval.append([row[0], row[1], row[2], row[3], row[4]])
         return retval
 
 
