@@ -129,7 +129,7 @@ class ViralIndex:
 
         retval = []
         for row in query_job:
-            retval.append()row[0]
+            retval.append(row[0])
         return retval
 
     def get_taxid_from_spacer_seq(self, spacer_seq):
