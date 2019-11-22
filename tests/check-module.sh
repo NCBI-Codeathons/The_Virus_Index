@@ -12,7 +12,7 @@ TMP=`mktemp -d`
 trap " /bin/rm -fr $TMP " INT QUIT EXIT HUP KILL ALRM
 pushd $TMP
 
-virtualenv -q -p python3 .env
+python3 -m venv .env
 set +x
 source .env/bin/activate
 set -x

@@ -12,7 +12,7 @@ https://test.pypi.org/project/viral-index/
 
 1. Install the `viral-index` module
 ```bash
-virtualenv -ppython3 .env
+python3 -m venv .env
 source .env/bin/activate
 pip install -q --extra-index-url https://test.pypi.org/simple/ viral-index 
 ```
@@ -78,7 +78,7 @@ Additional sample code can be found in [python/sample-viral-index-access.py](pyt
 #### Maintainer dependencies
 1. `make`: Run `sudo apt-get -y -m update && sudo apt-get install -y make` or
    equivalent command for your system.
-1. `python3` and [virtualenv](https://pypi.org/project/virtualenv/)
+1. `python3`
 1. [GCP SDK](https://cloud.google.com/sdk/)
 
 #### Instructions

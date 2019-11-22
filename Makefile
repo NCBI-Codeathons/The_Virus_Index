@@ -52,7 +52,7 @@ check_python_syntax: ${VENV}
 		for f in $(wildcard python/*.py); do python -m py_compile $$f ; done
 
 ${VENV}: requirements.txt
-	[ -d ${VENV} ] || virtualenv -p python3 $@
+	[ -d ${VENV} ] || python3 -m venv $@
 	source ${VENV}/bin/activate && pip install -r $^
 	source ${VENV}/bin/activate && pip install -r requirements/test.txt
 	source ${VENV}/bin/activate && pip install -e .
