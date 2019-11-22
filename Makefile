@@ -7,8 +7,25 @@ SHELL=/bin/bash
 VENV=.env
 
 export TAXADB_CONFIG=${PWD}/etc/taxadb.cfg
-#export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/etc/cred.json
+export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/etc/cred.json
 
+########################################################################################
+# BigQuery targets
+SVC_ACCT_NAME=bg-access-${USER}
+GCP_PROJECT_ID?=${USER}
+
+.PHONY: setup_bigquery_authentication
+setup_bigquery_authentication:
+	echo ${GCP_PROJECT_ID}
+	gcloud iam service-accounts create ${SVC_ACCT_NAME}
+	gcloud projects add-iam-policy-binding ${GCP_PROJECT_ID} --member "serviceAccount:${SVC_ACCT_NAME}@${GCP_PROJECT_ID}.iam.gserviceaccount.com" --role "roles/owner"
+	gcloud iam service-accounts keys create ${GOOGLE_APPLICATION_CREDENTIALS} --iam-account ${SVC_ACCT_NAME}@${GCP_PROJECT_ID}.iam.gserviceaccount.com
+
+.PHONY: check_bq
+check_bq:
+	bq query --use_legacy_sql=false 'SELECT count(*) FROM `virus-hunting-2-codeathon.viasq.cdd_data`'
+
+########################################################################################
 # Test code
 check_taxadb: check_python_syntax ${VENV}
 	[ -f taxadb.sqlite ] || make init_taxadb
@@ -51,13 +68,13 @@ dist/${MODULE_NAME}-${PYTHON_MODULE_VERSION}.tar.gz:
 TEST_PYPI=https://test.pypi.org
 .PHONY: deploy
 deploy: dist/${MODULE_NAME}-${PYTHON_MODULE_VERSION}.tar.gz
-	#twine upload --repository-url ${TEST_PYPI}/legacy/ $<
-	twine upload --repository testpypi $<
-	#twine upload $<
+	#source ${VENV}/bin/activate && twine upload --repository-url ${TEST_PYPI}/legacy/ $<
+	source ${VENV}/bin/activate && twine upload --repository testpypi $<
+	#source ${VENV}/bin/activate && twine upload $<
 
 
 clean:
-	$(RM) -r *.log *.egg-info
+	$(RM) -r *.log *.egg-info dist
 	find . -name __pycache__ | xargs ${RM} -fr
 	find . -name '*.pyc' | xargs ${RM} -fr
 
