@@ -64,12 +64,13 @@ Additional sample code can be found in [python/sample-viral-index-access.py](pyt
 
 ### Maintainer instructions 
 
-#### Dependencies
+#### Maintainer dependencies
 1. `make`: Run `sudo apt-get -y -m update && sudo apt-get install -y make` or
    equivalent command for your system.
 1. `python3` and [virtualenv](https://pypi.org/project/virtualenv/)
 1. [GCP SDK](https://cloud.google.com/sdk/)
 
+#### Instructions
 1. Check out the source code: `git clone https://github.com/NCBI-Codeathons/The_Virus_Index.git`
 1. Set up the python virtual environment: `make .env`
 1. Enable python virtualenv: `source .env/bin/activate`
