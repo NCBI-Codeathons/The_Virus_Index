@@ -64,6 +64,14 @@ def main():
             #print(evi_int)
             print("List it's too long!")
 
+    #interacting with spacerdb
+    spacer_seqs=viral_client.get_spacer_seqs(1915496)
+    print([s for s in spacer_seqs])
+
+    spacer_seq='CACGAGTGCGAAGCATCCAATCCATATGACTACAT'
+    #print(str(spacer_seq))
+    spacer_tax_ids=viral_client.get_taxid_from_spacer_seq(str(spacer_seq))
+    print([t for t in spacer_tax_ids])
 
 
 
