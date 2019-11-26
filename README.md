@@ -8,6 +8,10 @@ Status: Extensible DRAFT API
 
 https://test.pypi.org/project/viral-index/
 
+**Requirements:**
+* `python3`
+* A Google Cloud Platform (GCP) account. Please see [GCP's getting started guide](https://cloud.google.com/start) if you are new to GCP.
+
 ### Developer instructions 
 
 1. Install the `viral-index` module
@@ -21,7 +25,7 @@ pip install -q --extra-index-url https://test.pypi.org/simple/ viral-index
 
 Usage of this API requires access to GCP BigQuery. To set up authentication, please follow [these instructions](https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication).
 
-*N.B.*: You _may_ be charged for using this API. Please learn more about [GCP's free tier](https://cloud.google.com/free/).
+**N.B.**: You _may_ be charged for using this API. Please learn more about [BigQuery pricing](https://cloud.google.com/bigquery/pricing#free-tier).
 
 3. Write your code to access the index!
 
