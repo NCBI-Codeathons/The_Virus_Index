@@ -23,7 +23,7 @@ pip install -q --extra-index-url https://test.pypi.org/simple/ viral-index
 
 2. Configure BigQuery access credentials
 
-Usage of this API requires access to GCP BigQuery. To set up authentication, please follow [these instructions](https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication).
+Usage of this API requires access to GCP BigQuery. To set up authentication, please follow the instructions in the [section "Setting up authentication" in this page](https://cloud.google.com/bigquery/docs/reference/libraries#setting_up_authentication). **Note**: when prompted to save the JSON file with your key downloads, we suggest we save it to a filename _without_ spaces. In that way it's easier to set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable :)
 
 **N.B.**: You _may_ be charged for using this API. Please learn more about [BigQuery pricing](https://cloud.google.com/bigquery/pricing#free-tier).
 
